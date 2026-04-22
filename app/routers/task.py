@@ -7,6 +7,9 @@ import app.schemas as schemas
 
 router = APIRouter(prefix="/tasks",tags=["Tasks"])
 
+@router.get("/")
+def root():
+    return{"message":"Task Manager API is running"}
 @router.post("/",response_model=schemas.TaskResponse)
 def create(task:schemas.TaskCreate,db:Session=Depends(get_db)):
     return crud.create_task(db,task)
