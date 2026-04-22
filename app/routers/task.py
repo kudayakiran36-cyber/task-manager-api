@@ -14,7 +14,7 @@ def root():
 def create(task:schemas.TaskCreate,db:Session=Depends(get_db)):
     return crud.create_task(db,task)
 
-@router.get("/",response_model=list[schemas.TaskResponse])
+@router.get("/read_all",response_model=list[schemas.TaskResponse])
 def read_all(db:Session=Depends(get_db)):
     return crud.get_tasks(db)
 
