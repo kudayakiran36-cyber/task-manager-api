@@ -1,7 +1,6 @@
 from fastapi import APIRouter,Depends,HTTPException
 from sqlalchemy.orm import Session
-from app.database import SessionLocal,get_db
-from app.core.logger import logger
+from app.database import get_db
 import app.crud as crud
 import app.schemas as schemas
 
